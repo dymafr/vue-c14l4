@@ -32,8 +32,20 @@ const price = useField('price');
 const description = useField('description');
 const category = useField('category');
 
-const trySubmit = handleSubmit((formValues) => {
-  console.log(formValues);
+const trySubmit = handleSubmit(async (formValues, { resetForm }) => {
+  try {
+    await fetch('https://restapi.fr/api/projetproducts', {
+      method: 'POST',
+      body: JSON.stringify(formValues),
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    });
+    resetForm();
+    firstInput.value?.focus();
+  } catch (e) {
+    console.log(e);
+  }
 });
 </script>
 
