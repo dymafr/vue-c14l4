@@ -1,7 +1,7 @@
 import type { Category } from './type';
 
 export interface ProductInterface {
-  id: number;
+  _id: number;
   title: string;
   image: string;
   price: number;
