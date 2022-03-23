@@ -9,7 +9,7 @@ import type {
   ProductInterface,
   FilterUpdate,
 } from '../../interfaces';
-import { DEFAULT_FILTERS } from '../../data/filters';
+import { DEFAULT_FILTERS } from './data/filters';
 
 const state = reactive<{
   products: ProductInterface[];
